@@ -1,7 +1,7 @@
 package com.hyl.services.nacosgateway.route;
 
 import com.alibaba.cloud.nacos.NacosConfigProperties;
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class NacosDynamicRouteConfig  {
 
-    private ApplicationEventPublisher publisher;
+    private final ApplicationEventPublisher publisher;
 
     public NacosDynamicRouteConfig(ApplicationEventPublisher publisher) {
         this.publisher = publisher;
@@ -17,7 +17,7 @@ public class NacosDynamicRouteConfig  {
 
     @Configuration
     public class NacosDynRoute {
-        private NacosConfigProperties nacosConfigProperties;
+        private final NacosConfigProperties nacosConfigProperties;
 
         public NacosDynRoute(NacosConfigProperties nacosConfigProperties) {
             this.nacosConfigProperties = nacosConfigProperties;

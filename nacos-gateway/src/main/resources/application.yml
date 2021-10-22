@@ -10,8 +10,7 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: json
-        name: ${spring.application.name}.
-# 自动加载注册中心中的lb,开启后无需配置
+        name: ${spring.application.name}.json
     gateway:
       discovery:
         locator:

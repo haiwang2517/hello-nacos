@@ -77,7 +77,9 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
     }
 
     private List<RouteDefinition> getListByStr(String content) {
-
+        if(StringUtils.isBlank(content)){
+            return new ArrayList<>(0);
+        }
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             return Arrays.asList(objectMapper.readValue(content, RouteDefinition[].class));

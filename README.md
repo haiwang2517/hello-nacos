@@ -11,6 +11,6 @@
 ### 注册Nacos
 服务启动自动注册到 nacos中
 
-
+rere
 ### Gateway 
 前端、ng 调用gateway地址
